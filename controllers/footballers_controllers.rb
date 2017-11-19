@@ -27,6 +27,15 @@ class FootballerControllers < Sinatra::Base
     erb :'posts/new'
   end
 
+  get "/:id" do
+
+    id = params[:id].to_i
+    @post = Post.find(id)
+
+    erb :'posts/show'
+
+  end
+
 
 
 
