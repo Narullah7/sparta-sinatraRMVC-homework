@@ -13,8 +13,18 @@ class FootballerControllers < Sinatra::Base
   get "/" do
     @title = "Homepage"
 
+    @posts = Post.all
+
     erb :'posts/index'
 
+  end
+
+  get "/new" do
+    @title = "New Footballer"
+
+    @post = Post.new
+
+    erb :'posts/new'
   end
 
 
